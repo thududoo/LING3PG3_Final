@@ -90,7 +90,7 @@ class LanguageMapApp(tk.Tk):
         self.lang_features: FeatureDict = {
             "No Audible Release": {"WUU", "YUE", "GAN", "MIN", "HAK"},
             "Voiced Consonants": {"MIN", "WUU", "HSN"},
-            "Literary and colloquial readings (strict)": {
+            "Literary and colloquial readings": {
                 "WUU",
                 "YUE",
                 "GAN",
@@ -128,7 +128,7 @@ class LanguageMapApp(tk.Tk):
             self.feature_details: FeatureDetailDict = json.load(f)
 
         self.all_provinces: ProvinceSet = (
-            set().union(*self.languages.values()) if self.languages else set()
+            set().union(*self.languages.values())
         )
         self.layer_filenames: LayerDict = {
             province: f"./map/{province}.png" for province in self.all_provinces
@@ -308,8 +308,8 @@ class LanguageMapApp(tk.Tk):
         Displays a popup messagebox showing the list of provinces
         where the specified language is spoken.
         """
-        full_name = self.language_names.get(lang_code, lang_code)
-        province_set = self.languages.get(lang_code, set())
+        full_name = self.language_names.get(lang_code)
+        province_set = self.languages.get(lang_code)
 
         province_list = sorted(list(province_set))
         province_text = "\n".join(province_list)
@@ -329,7 +329,7 @@ class LanguageMapApp(tk.Tk):
         details = self.feature_details.get(feature_name, {})
         description = details.get("desc", "No description available.")
         wiki_link_url = details.get("link")
-        langs_with_feature = self.lang_features.get(feature_name, set())
+        langs_with_feature = self.lang_features.get(feature_name)
 
         pop_with_feature = 0
         pop_without_feature = 0
@@ -338,14 +338,14 @@ class LanguageMapApp(tk.Tk):
         langs_without_feature = all_app_langs - langs_with_feature
 
         for lang_code in langs_with_feature:
-            pop_with_feature += self.language_populations.get(lang_code, 0)
+            pop_with_feature += self.language_populations.get(lang_code)
         for lang_code in langs_without_feature:
-            pop_without_feature += self.language_populations.get(lang_code, 0)
+            pop_without_feature += self.language_populations.get(lang_code)
 
         total_pop = pop_with_feature + pop_without_feature
 
         language_names_list = sorted(
-            [self.language_names.get(code, code) for code in langs_with_feature]
+            [self.language_names.get(code) for code in langs_with_feature]
         )
 
         tk.Label(popup, text=feature_name, font="-weight bold").pack(
@@ -362,7 +362,7 @@ class LanguageMapApp(tk.Tk):
         lang_frame = tk.Frame(popup)
         lang_label = tk.Label(
             lang_frame,
-            text=("\n".join(language_names_list) if language_names_list else "None"),
+            text=("\n".join(language_names_list)),
             justify=tk.LEFT,
         )
         lang_label.pack(side=tk.LEFT)
@@ -444,20 +444,18 @@ class LanguageMapApp(tk.Tk):
             name for name, var in self.feature_vars.items() if var.get()
         ]
 
-        languages_to_select: Set[LanguageCode]
+        languages_to_select: Set[LanguageCode] = set()
 
         if not selected_features:
             for var in self.language_vars.values():
                 var.set(False)
         else:
             first_feature_name = selected_features[0]
-            languages_to_select = self.lang_features.get(
-                first_feature_name, set()
-            ).copy()
+            languages_to_select = self.lang_features.get(first_feature_name).copy()
 
             for i in range(1, len(selected_features)):
                 feature_name = selected_features[i]
-                current_feature_langs = self.lang_features.get(feature_name, set())
+                current_feature_langs = self.lang_features.get(feature_name)
                 languages_to_select.intersection_update(current_feature_langs)
                 if not languages_to_select:
                     break
@@ -478,7 +476,7 @@ class LanguageMapApp(tk.Tk):
         provinces_to_show: ProvinceSet = set()
         for lang_code, var in self.language_vars.items():
             if var.get():
-                provinces_for_this_language = self.languages.get(lang_code, set())
+                provinces_for_this_language = self.languages.get(lang_code)
                 provinces_to_show.update(provinces_for_this_language)
 
         for province, item_id in self.province_canvas_items.items():
