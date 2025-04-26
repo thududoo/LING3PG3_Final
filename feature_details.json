@@ -1,0 +1,30 @@
+{
+    "No Audible Release": {
+        "desc": "Checked Tone / 入聲 (lit. \"Entering Tone\") is a feature that present in Old Chinese.",
+        "link": "https://en.wikipedia.org/wiki/Checked_tone"
+    },
+    "Voiced Consonants": {
+        "desc": "Voiced consonants presents in Old Chinese. Some mordern Chinese languages have voiced consonats devoiced.",
+        "link": "https://en.wikipedia.org/wiki/Voiced_consonant"
+    },
+    "Literary and colloquial readings": {
+        "desc": "文白異讀 (lit. \"Literary and colloquial differnt pronunciation). Some Chinese characters are pronounced literarily for loanwords, proper nouns, formal contexts, and colloquially for casual speech.",
+        "link": "https://en.wikipedia.org/wiki/Literary_and_colloquial_readings_of_Chinese_characters"
+    },
+    "Reduced Diphthong": {
+        "desc": "Some languages have reduced diphthon because of assimilation or other reasons.",
+        "link": "https://en.wikipedia.org/wiki/Diphthong"
+    },
+    "No-Palatalization": {
+        "desc": "Some sounds become palatalized in some Mordern Chinese languages. In contradiction, Old Chinese has palatalized and non-palatalized distinction.",
+        "link": "https://en.wikipedia.org/wiki/Palatalization_(sound_change)"
+    },
+    "Post-Verb Adv.": {
+        "desc": "In some languages the adverb is placed differntly than majority of languagees.",
+        "link": ""
+    },
+    "Post-Noun Adj.": {
+        "desc": "In some languages the adjective is placed differntly than majority of languagees.",
+        "link": ""
+    }
+}
