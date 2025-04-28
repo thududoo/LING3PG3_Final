@@ -1,8 +1,11 @@
 """
 Data from previous personal research. Citation:
-Li Lan, "The Synchronic Distribution and Diachronic Origin of 'Jīgōng'-type Words," Linguistic Research (Yǔwén Yánjiū), Issue 4, 2014. (李蓝 《“鸡公”类词的共时分布与历时源流》 《语文研究》2014年第4期)
-Zhengzhang Shangfang, Old Chinese Phonology, Shanghai Education Press, First Edition 2003, Second Edition 2013. (郑张尚芳 《上古音系》 上海教育出版社 2003年第一版，2013年第二版)
-Database of Ancient and Modern Pronunciations of Chinese Characters, National Science and Technology Council, Republic of China, January 1, 2017. (漢字古今音資料庫 中華民國行政院國家科學委員會 2017年01月01日)
+Li Lan, "The Synchronic Distribution and Diachronic Origin of 'Jīgōng'-type Words," Linguistic Research (Yǔwén Yánjiū), Issue 4, 2014.
+(李蓝 《“鸡公”类词的共时分布与历时源流》 《语文研究》2014年第4期)
+Zhengzhang Shangfang, Old Chinese Phonology, Shanghai Education Press, First Edition 2003, Second Edition 2013.
+(郑张尚芳 《上古音系》 上海教育出版社 2003年第一版，2013年第二版)
+Database of Ancient and Modern Pronunciations of Chinese Characters, National Science and Technology Council, Republic of China, January 1, 2017.
+(漢字古今音資料庫 中華民國行政院國家科學委員會 2017年01月01日)
 """
 
 import tkinter as tk
